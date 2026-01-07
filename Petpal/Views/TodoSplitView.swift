@@ -65,7 +65,7 @@ struct TodoSplitView: View {
                             .frame(height: 120)
                             .scrollContentBackground(.hidden)
                     }
-                    .background(Color(uiColor: .systemGray6))
+                    .background(Color(white: 0.95))
                     .cornerRadius(16)
                     .padding(.horizontal, 24)
 
@@ -175,7 +175,7 @@ struct TodoSplitView: View {
                     Spacer()
                 }
             }
-            .background(Color(uiColor: .systemGroupedBackground))
+            .background(.background)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

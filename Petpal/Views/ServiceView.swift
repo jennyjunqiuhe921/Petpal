@@ -7,17 +7,22 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
 struct ServiceView: View {
     @State private var selectedService = "上门喂养"
     private let services = ["上门喂养", "遛狗服务", "家庭寄养", "洗护预约"]
     private let providers = ServiceProvider.mockData
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            VStack(spacing: 0) {
-                // Map Section
-                MapPlaceholder()
-                    .frame(height: UIScreen.main.bounds.height * 0.45)
+        GeometryReader { geometry in
+            ZStack(alignment: .bottom) {
+                VStack(spacing: 0) {
+                    // Map Section
+                    MapPlaceholder()
+                        .frame(height: geometry.size.height * 0.45)
 
                 // Bottom Sheet
                 VStack(spacing: 0) {
@@ -74,7 +79,7 @@ struct ServiceView: View {
                 }
                 .background(
                     RoundedRectangle(cornerRadius: 32, style: .continuous)
-                        .fill(Color(UIColor.systemGroupedBackground))
+                        .fill(.background)
                         .ignoresSafeArea()
                 )
             }
@@ -83,8 +88,9 @@ struct ServiceView: View {
             LiveServiceBanner()
                 .padding(.horizontal, 24)
                 .padding(.bottom, 96)
+            }
+            .background(.background)
         }
-        .background(Color(UIColor.systemGroupedBackground))
     }
 
     private func iconForService(_ service: String) -> String {
