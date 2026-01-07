@@ -50,7 +50,7 @@ struct ProfileView: View {
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(.gray)
                                     .padding(6)
-                                    .background(Circle().fill(Color(UIColor.systemGray6)))
+                                    .background(Circle().fill(Color(.systemGray6)))
                             }
                             .offset(x: 32, y: 32)
                         )
@@ -115,7 +115,7 @@ struct ProfileView: View {
                 .padding(.bottom, 100)
             }
         }
-        .background(Color(UIColor.systemGroupedBackground))
+        .background(Color(.systemGroupedBackground))
         .ignoresSafeArea(edges: .top)
     }
 }
