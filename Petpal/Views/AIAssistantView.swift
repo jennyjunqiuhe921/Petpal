@@ -55,7 +55,7 @@ struct AIAssistantView: View {
                         .font(.system(size: 16))
                         .foregroundColor(.gray)
                         .frame(width: 32, height: 32)
-                        .background(Circle().fill(Color(UIColor.systemGray6)))
+                        .background(Circle().fill(Color(white: 0.95)))
                 }
             }
             .padding(.horizontal, 20)
@@ -91,7 +91,7 @@ struct AIAssistantView: View {
                     }
                     .padding(20)
                 }
-                .background(Color(UIColor.systemGroupedBackground))
+                .background(.background)
                 .onChange(of: messages.count) { _ in
                     if let lastMessage = messages.last {
                         withAnimation {
@@ -116,7 +116,7 @@ struct AIAssistantView: View {
                                         .foregroundColor(.secondary)
                                         .padding(.horizontal, 12)
                                         .padding(.vertical, 8)
-                                        .background(Color(UIColor.systemGray6))
+                                        .background(Color(white: 0.95))
                                         .cornerRadius(16)
                                 }
                             }
@@ -154,7 +154,7 @@ struct AIAssistantView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 10)
-                    .background(Color(UIColor.systemGray6))
+                    .background(Color(white: 0.95))
                     .cornerRadius(24)
 
                     Button {
@@ -248,7 +248,7 @@ struct MessageBubble: View {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                         .fill(message.role == .user ? Color.orange : Color.white)
                 )
-                .frame(maxWidth: UIScreen.main.bounds.width * 0.7, alignment: message.role == .user ? .trailing : .leading)
+                .frame(maxWidth: 300, alignment: message.role == .user ? .trailing : .leading)
 
             if message.role == .ai {
                 Spacer()

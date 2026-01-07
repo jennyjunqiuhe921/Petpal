@@ -68,7 +68,7 @@ struct HealthView: View {
                 .padding(.bottom, 100)
             }
         }
-        .background(Color(UIColor.systemGroupedBackground))
+        .background(.background)
         .ignoresSafeArea(edges: .top)
         .sheet(isPresented: $showTodoSplit) {
             TodoSplitView { newTodos in
@@ -281,7 +281,7 @@ struct TasksCard: View {
                             }
                         }
                         .padding(16)
-                        .background(Color(UIColor.systemGray6))
+                        .background(Color(white: 0.95))
                         .cornerRadius(16)
                     }
                 }
@@ -343,7 +343,7 @@ struct WeightChartCard: View {
                         .foregroundColor(.secondary)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
-                        .background(Color(UIColor.systemGray6))
+                        .background(Color(white: 0.95))
                         .cornerRadius(16)
                 }
             }

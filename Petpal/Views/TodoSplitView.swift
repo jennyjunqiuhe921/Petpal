@@ -176,9 +176,8 @@ struct TodoSplitView: View {
                 }
             }
             .background(.background)
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .automatic) {
                     Button {
                         dismiss()
                     } label: {
